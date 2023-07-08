@@ -15,6 +15,11 @@ variable "regions" {
   }
 }
 
+##Account ID
+variable "account_id" {
+  description = "AWS Account ID"
+}
+
 ##Network
 variable "vpc" {
   description = "CIDR BLOCK for VPC"

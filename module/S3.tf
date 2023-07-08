@@ -7,6 +7,16 @@ resource "aws_s3_bucket" "bucket_alb_access_log" {
   }
 }
 
+##Bucket for Codepipeline
+resource "aws_s3_bucket" "bucket_pipeline" {
+  bucket = "${var.general_config["project"]}-${var.general_config["env"]}-codepipeline-bucket"
+
+  tags = {
+    Name = "${var.general_config["project"]}-${var.general_config["env"]}-codepipeline-bucket"
+  }
+  acl    = "private"
+}
+
 ##Public Access Block
 resource "aws_s3_bucket_public_access_block" "bucket_public_access" {
   bucket                  = aws_s3_bucket.bucket_alb_access_log.id
