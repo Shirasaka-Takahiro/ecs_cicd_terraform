@@ -1,7 +1,7 @@
 FROM nginx:alpine
  
-COPY ./docker/nginx/conf/onya-lab.site.conf /etc/nginx/conf.d/
-ADD ./docker/nginx/conf/nginx.conf /etc/nginx/
-COPY ./docker/sites/index.html /var/www/html/
+COPY ./nginx/onya-lab.site.conf /etc/nginx/conf.d/
+ADD ./nginx/nginx.conf /etc/nginx/
+COPY ./nginx/index.html /var/www/html/
  
 EXPOSE 80

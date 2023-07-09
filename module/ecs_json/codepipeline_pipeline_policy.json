@@ -42,6 +42,13 @@
         },
         {
             "Action": [
+              "codestar-connections:UseConnection"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+          },
+        {
+            "Action": [
                 "elasticbeanstalk:*",
                 "ec2:*",
                 "elasticloadbalancing:*",

@@ -14,7 +14,7 @@ module "prod" {
 
   general_config     = var.general_config
   regions            = var.regions
-  account_id = var.account_id
+  account_id         = var.account_id
   availability_zones = var.availability_zones
   vpc_cidr           = var.vpc_cidr
   public_subnets     = var.public_subnets

@@ -117,14 +117,14 @@ variable "sub_domain_1" {
 variable "repository_name" {
   description = "ECR repository name"
   type        = string
-  default     = "example"
+  default     = "ecs_cicd_terraform-image"
 }
 
 ##Dockerimage Name
 variable "image_name" {
   description = "Dockerimage name"
   type        = string
-  default     = "takahiros991/apache_terraform"
+  default     = "takahiros991/ecs_cicd_terraform-image"
 }
 
 ##Dockerfile Directory
