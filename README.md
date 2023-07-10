@@ -17,6 +17,8 @@ Cloud Watch Log Group
 Route53
 <br />
 ACM
+<br />
+Codepipeline
 
 ■Architecture
 <br />
