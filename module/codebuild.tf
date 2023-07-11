@@ -38,9 +38,9 @@ resource "aws_codebuild_project" "project" {
   source {
     type            = "CODEPIPELINE"
     #type            = "GITHUB"
-    #location        = "https://github.com/Shirasaka-Takahiro/ecs_cicd_terraform.git"
-    #git_clone_depth = 1
-    #buildspec       = "buildspec.yml"
+    location        = "https://github.com/Shirasaka-Takahiro/ecs_cicd_terraform.git"
+    git_clone_depth = 1
+    buildspec       = "buildspec.yml"
   }
 
   vpc_config {
