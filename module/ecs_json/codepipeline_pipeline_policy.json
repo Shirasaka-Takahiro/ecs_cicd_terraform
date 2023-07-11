@@ -22,6 +22,7 @@
                 "codecommit:CancelUploadArchive",
                 "codecommit:GetBranch",
                 "codecommit:GetCommit",
+                "codecommit:GetRepository",
                 "codecommit:GetUploadArchiveStatus",
                 "codecommit:UploadArchive"
             ],
@@ -105,7 +106,9 @@
         {
             "Action": [
                 "codebuild:BatchGetBuilds",
-                "codebuild:StartBuild"
+                "codebuild:StartBuild",
+                "codebuild:BatchGetBuildBatches",
+                "codebuild:StartBuildBatch"
             ],
             "Resource": "*",
             "Effect": "Allow"
@@ -146,7 +149,16 @@
                 "ecr:DescribeImages"
             ],
             "Resource": "*"
-        }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+              "appconfig:StartDeployment",
+              "appconfig:StopDeployment",
+              "appconfig:GetDeployment"
+            ],
+            "Resource": "*"
+          }
     ],
     "Version": "2012-10-17"
 }

@@ -9,7 +9,6 @@ resource "aws_codepipeline" "pipeline" {
 
   stage {
     name = "Source"
-
     action {
       name             = "Source"
       category         = "Source"
@@ -24,7 +23,7 @@ resource "aws_codepipeline" "pipeline" {
         #Owner                = "Shirasaka-Takahiro"
         #Repo                 = "ecs_cicd_terraform-image"
         ConnectionArn        = aws_codestarconnections_connection.github.arn
-        FullRepositoryId     = "https://github.com/Shirasaka-Takahiro/ecs_cicd_terraform.git"
+        FullRepositoryId     = "Shirasaka-Takahiro/ecs_cicd_terraform"
         BranchName              = "main"
         #OAuthToken           = aws_ssm_parameter.github_personal_access_token.value
         #PollForSourceChanges = "false"
@@ -43,7 +42,6 @@ resource "aws_codepipeline" "pipeline" {
       input_artifacts  = ["source_output"]
       output_artifacts = ["build_output"]
       version          = "1"
-
       configuration = {
         ProjectName = aws_codebuild_project.project.name
       }
