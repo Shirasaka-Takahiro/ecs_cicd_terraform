@@ -6,7 +6,7 @@ phases:
       # 環境変数の設定
       - AWS_ACCOUNT_ID=482122962623
       - ECR_URI=482122962623.dkr.ecr.ap-northeast-1.amazonaws.com
-      - REPOSITORY_URI=public.ecr.aws/w6q1d4u6/ecs_cicd_terraform-image/ecs_cicd_terraform-image
+      - REPOSITORY_URI=482122962623.dkr.ecr.ap-northeast-1.amazonaws.com/ecs_cicd_terraform-image
       - CONTAINER_NAME=example-prod-web01
       # コミットハッシュの先頭7桁をタグに利用する
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
@@ -18,7 +18,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:latest .
+      - docker build -t $REPOSITORY_URI:latest ./dokcer
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
