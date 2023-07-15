@@ -12,21 +12,15 @@ resource "aws_codepipeline" "pipeline" {
     action {
       name             = "Source"
       category         = "Source"
-      #owner            = "ThirdParty"
       owner            = "AWS"
-      #provider         = "GitHub"
       provider         = "CodeStarSourceConnection"
       version          = "1"
       output_artifacts = ["source_output"]
 
       configuration = {
-        #Owner                = "Shirasaka-Takahiro"
-        #Repo                 = "ecs_cicd_terraform-image"
         ConnectionArn        = aws_codestarconnections_connection.github.arn
         FullRepositoryId     = "Shirasaka-Takahiro/ecs_cicd_terraform"
         BranchName              = "main"
-        #OAuthToken           = aws_ssm_parameter.github_personal_access_token.value
-        #PollForSourceChanges = "false"
       }
     }
   }
@@ -72,19 +66,3 @@ resource "aws_codestarconnections_connection" "github" {
   name = "${var.general_config["project"]}-github-connection"
   provider_type = "GitHub"
 }
-
-#resource "aws_codepipeline_webhook" "webhook" {
-#  name            = "webhook-fargate-deploy"
-#  authentication  = "GITHUB_HMAC"
-#  target_action   = "Source"
-#  target_pipeline = aws_codepipeline.pipeline.name
-
-#  authentication_configuration {
-#    secret_token = aws_ssm_parameter.github_personal_access_token.value
-#  }
-
-#  filter {
-#    json_path    = "$.ref"
-#    match_equals = "refs/heads/{Branch}"
-#  }
-#}

@@ -2,7 +2,7 @@
 1. Create S3 for tfstate
 ex)example-dev-alb-accesslog-bucket
 
-2. Build Dockerfile locally
+2. Build Dockerfile on local
 
 ■Resources
 <br />
@@ -18,14 +18,24 @@ Route53
 <br />
 ACM
 <br />
+S3 x 3
+<br />
+IAM x 3
+<br />
+Codebuild
+<br />
 Codepipeline
+
+
 
 ■Architecture
 <br />
 Go to wiki page!
 
 ■Deploy
-1. Move prod directory
-2. terraform init
-3. terraform plan
-4. terraform apply
+1. Build Dockerfile on local
+docker build -t {IMAGE_NAME}:latest ./docker
+2. Move prod directory
+3. terraform init
+4. terraform plan
+5. terraform apply
