@@ -26,8 +26,6 @@ Codebuild
 <br />
 Codepipeline
 
-
-
 ■Architecture
 <br />
 Go to wiki page!
