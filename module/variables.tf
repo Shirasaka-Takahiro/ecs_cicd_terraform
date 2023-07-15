@@ -24,3 +24,4 @@ provider "aws" {
   alias  = "us-east-1"
   region = var.regions["virginia"]
 }
+variable "github_url" {}

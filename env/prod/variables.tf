@@ -147,3 +147,10 @@ variable "fargate_memory" {
   type        = string
   default     = "512"
 }
+
+##github URL
+variable "github_url" {
+  description = "github url"
+  type        = string
+  default     = "https://github.com/Shirasaka-Takahiro/ecs_cicd_terraform.git"
+}

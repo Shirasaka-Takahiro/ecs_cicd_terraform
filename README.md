@@ -2,8 +2,6 @@
 1. Create S3 for tfstate
 ex)example-dev-alb-accesslog-bucket
 
-2. Build Dockerfile on local
-
 ■Resources
 <br />
 ECS(fargate) x 2
@@ -37,3 +35,5 @@ docker build -t {IMAGE_NAME}:latest ./docker
 3. terraform init
 4. terraform plan
 5. terraform apply
+6. Connect Github repository to AWS Account throughout Codestar Connections Connection
+7. Restart Codepipeline

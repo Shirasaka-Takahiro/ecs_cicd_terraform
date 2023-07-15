@@ -29,4 +29,5 @@ module "prod" {
   image_name      = var.image_name
   fargate_cpu     = var.fargate_cpu
   fargate_memory  = var.fargate_memory
+  github_url = var.github_url
 }
